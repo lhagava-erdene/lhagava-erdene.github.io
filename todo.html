@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+ <html>
+     <head>
+        <meta charset="utf-8"> 
+        <title>ToDo List</title>
+   
+     </head>
+     <body>
+        <ul>
+            <li>
+                <a href="../aa/taniltsuulga.html">
+                    <button class="butsah">butsah</button>
+                </a>    
+            </li>
+        </ul>
+        <div class="container" id="container"><!--Энэ нь бүхнийг агуулах том div байх болно.-->
+            <input type="text" placeholder="                                  Add list" id="myinput"><!--//myinput.value-г эндээс авна.-->
+            <button onclick="getList()" class="addbut">Add</button><!--//Энэ button дарагдах үед function ажиллаж утга авах болно.-->
+            <div class="container2" id="container2">
+                
+            </div>
+        </div>
+            
+         
+         <script>
+             var container = document.getElementById("container2");
+             var myinput;
+             var mylist;
+             function getList(){
+                 myinput = document.getElementById("myinput").value;
+                 if(myinput == ""){
+                     alert("Хоосон байна!");
+                 }
+                 else if(myinput !== ""){
+                    mylist = myinput;
+                    var newdiv = document.createElement("div");
+                    var newbutton = document.createElement("button");
+                    newbutton.innerHTML = "Delete";
+                    newbutton.style.fontSize = "20px";
+                    newdiv.innerHTML = mylist;
+                    container.append(newdiv, newbutton);
+                    document.getElementById("myinput").value = "";
+                 }
+                    newbutton.onclick = function(){
+                        newbutton.style.display = "none";
+                        newdiv.style.display = "none";
+                    };
+                 
+             }
+             
+         </script>
+     </body>
+ </html>
+
+
+

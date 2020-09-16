@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+         body{
+             padding:0;
+             margin: 0;
+             line-height: 100vh;
+             text-align: center;
+         }
+    </style>
+     <ul>
+        <li>
+            <a href="../aa/taniltsuulga.html">
+                <button class="butsah">butsah</button>
+            </a>    
+        </li>
+    </ul>
+    <button onclick="Ungu()">Change backround</button>
+    <input type="text" id="colorinput">
+    <button onclick="Ungunemeh()">ADD COLOR</button>
+    <script>
+        var colors = ["aquamarine","cadetblue","cornflowerblue","darkcyan","black","blue"]
+        var count = 0
+        var colorInput = document.getElementById("colorInput")
+        setInterval (myIntervalFunction,1000) 
+        function myIntervalFunction(){
+            console.log ("Interval!")
+            document.body.style.backgroundColor = colors[count]
+            count++
+            if(count == colors.length){
+            count = 0
+            }
+          
+        }
+        function Ungunemeh(){
+        colors.push(colorInput.value)
+        count = colors.length - 1
+        Ungu()
+        colorInput.value = ""
+        }
+    </script>
+    
+    
+</body>
+</html>
